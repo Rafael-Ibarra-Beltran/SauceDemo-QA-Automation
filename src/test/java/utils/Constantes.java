@@ -1,0 +1,21 @@
+package utils;
+
+public final class Constantes {
+    private Constantes() {
+    }
+
+    public static final String URL_SAUCE_DEMO = "https://www.saucedemo.com/";
+    public static final String USUARIO_ESTANDAR = "standard_user";
+    public static final String USUARIO_BLOQUEADO = "locked_out_user";
+    public static final String USUARIO_INCORRECTO = "usuario_fake";
+    public static final String CONTRASENA_VALIDA = "secret_sauce";
+    public static final String CONTRASENA_INCORRECTA = "pass_fake";
+    public static final String PRODUCTO_MOCHILA = "Sauce Labs Backpack";
+    public static final String TEXTO_TITULO_PRODUCTOS = "Products";
+    public static final String VALOR_ORDEN_NOMBRE_A_Z = "az";
+    public static final String VALOR_ORDEN_PRECIO_MENOR_MAYOR = "lohi";
+    public static final String ERROR_USUARIO_BLOQUEADO = "Epic sadface: Sorry, this user has been locked out.";
+    public static final String ERROR_USUARIO_REQUERIDO = "Epic sadface: Username is required";
+    public static final String ERROR_CONTRASENA_REQUERIDA = "Epic sadface: Password is required";
+    public static final String ERROR_CREDENCIALES_INVALIDAS = "Epic sadface: Username and password do not match any user in this service";
+}
