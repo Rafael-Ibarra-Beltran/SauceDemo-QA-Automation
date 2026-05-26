@@ -14,6 +14,12 @@ public class Productos extends BasePage {
     private final By preciosProductos = By.cssSelector("[data-test='inventory-item-price']");
     private final By selectorOrdenamiento = By.cssSelector("[data-test='product-sort-container']");
     private final By enlaceMochila = By.id("item_4_title_link");
+    private final By botonAgregarMochila = By.id("add-to-cart-sauce-labs-backpack");
+    private final By botonEliminarMochila = By.id("remove-sauce-labs-backpack");
+    private final By enlaceCarrito = By.cssSelector("[data-test='shopping-cart-link']");
+    private final By contadorCarrito = By.cssSelector("[data-test='shopping-cart-badge']");
+    private final By botonMenu = By.id("react-burger-menu-btn");
+    private final By enlaceCerrarSesion = By.id("logout_sidebar_link");
 
     public Productos(WebDriver navegador) {
         super(navegador);
@@ -38,6 +44,38 @@ public class Productos extends BasePage {
 
     public void abrirMochila() {
         hacerClick(enlaceMochila);
+    }
+
+    public void agregarMochilaAlCarrito() {
+        hacerClick(botonAgregarMochila);
+    }
+
+    public void eliminarMochilaDelCarrito() {
+        hacerClick(botonEliminarMochila);
+    }
+
+    public void abrirCarrito() {
+        hacerClick(enlaceCarrito);
+    }
+
+    public String obtenerCantidadCarrito() {
+        return obtenerTexto(contadorCarrito);
+    }
+
+    public boolean contadorCarritoVisible() {
+        return estaVisible(contadorCarrito);
+    }
+
+    public boolean carritoVisible() {
+        return estaVisible(enlaceCarrito);
+    }
+
+    public void abrirMenu() {
+        hacerClick(botonMenu);
+    }
+
+    public void cerrarSesion() {
+        hacerClickJavaScript(enlaceCerrarSesion);
     }
 
     public void ordenarPorValor(String valor) {

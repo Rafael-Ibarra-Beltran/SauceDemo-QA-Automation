@@ -34,12 +34,17 @@ src/test/java/
     InicioSesion.java
     Productos.java
     DetalleProducto.java
+    Carrito.java
+    Checkout.java
   steps/
     PasosSesion.java
     PasosProductos.java
+    PasosCheckout.java
   tests/
     PruebasInicioSesion.java
     PruebasProductos.java
+    PruebasCarritoCheckout.java
+    PruebasMenu.java
   utils/
     Constantes.java
 ```
@@ -52,6 +57,9 @@ src/test/java/
 - Visualización de productos
 - Detalle de producto
 - Ordenamiento de productos
+- Carrito de compras
+- Checkout
+- Cierre de sesión
 
 ## Requisitos
 

@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
+import pages.Carrito;
 import pages.DetalleProducto;
 import pages.Productos;
 import utils.Constantes;
@@ -29,6 +30,38 @@ public class PasosProductos {
 
     public void ordenarPorPrecioAsc() {
         productos.ordenarPorValor(Constantes.VALOR_ORDEN_PRECIO_MENOR_MAYOR);
+    }
+
+    public void agregarMochilaAlCarrito() {
+        productos.agregarMochilaAlCarrito();
+    }
+
+    public void eliminarMochilaDelCarrito() {
+        productos.eliminarMochilaDelCarrito();
+    }
+
+    public Carrito abrirCarrito() {
+        productos.abrirCarrito();
+        return new Carrito(navegador);
+    }
+
+    public String obtenerCantidadCarrito() {
+        return productos.obtenerCantidadCarrito();
+    }
+
+    public boolean contadorCarritoVisible() {
+        return productos.contadorCarritoVisible();
+    }
+
+    public void cerrarSesion() {
+        productos.abrirMenu();
+        productos.cerrarSesion();
+    }
+
+    public boolean elementosProductosVisibles() {
+        return productos.tituloProductosVisible()
+                && productos.carritoVisible()
+                && productos.listaVisible();
     }
 
     public boolean nombresOrdenadosAZ() {

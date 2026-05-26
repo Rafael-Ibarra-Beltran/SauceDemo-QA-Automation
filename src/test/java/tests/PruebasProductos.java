@@ -48,4 +48,12 @@ public class PruebasProductos extends BaseTest {
 
         Assert.assertTrue(pasosProductos.preciosOrdenadosAsc());
     }
+
+    @Test(description = "TC-20 - Validar elementos principales de la página de productos")
+    public void elementosProductosVisibles() {
+        new PasosSesion(navegador).sesionEstandar();
+        PasosProductos pasosProductos = new PasosProductos(navegador);
+
+        Assert.assertTrue(pasosProductos.elementosProductosVisibles());
+    }
 }

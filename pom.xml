@@ -49,6 +49,18 @@
                     <includes>
                         <include>**/Pruebas*.java</include>
                     </includes>
+                    <parallel>none</parallel>
+                    <threadCount>1</threadCount>
+                    <properties>
+                        <property>
+                            <name>parallel</name>
+                            <value>none</value>
+                        </property>
+                        <property>
+                            <name>threadcount</name>
+                            <value>1</value>
+                        </property>
+                    </properties>
                 </configuration>
             </plugin>
         </plugins>
