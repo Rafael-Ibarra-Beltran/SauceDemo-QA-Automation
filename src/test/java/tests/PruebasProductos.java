@@ -49,6 +49,26 @@ public class PruebasProductos extends BaseTest {
         Assert.assertTrue(pasosProductos.preciosOrdenadosAsc());
     }
 
+    @Test(description = "TC-21 - Validar ordenamiento de productos por nombre Z-A")
+    public void ordenNombreZA() {
+        new PasosSesion(navegador).sesionEstandar();
+        PasosProductos pasosProductos = new PasosProductos(navegador);
+
+        pasosProductos.ordenarPorNombreZA();
+
+        Assert.assertTrue(pasosProductos.nombresOrdenadosZA());
+    }
+
+    @Test(description = "TC-22 - Validar ordenamiento de productos por precio mayor a menor")
+    public void ordenPrecioMayorMenor() {
+        new PasosSesion(navegador).sesionEstandar();
+        PasosProductos pasosProductos = new PasosProductos(navegador);
+
+        pasosProductos.ordenarPorPrecioDesc();
+
+        Assert.assertTrue(pasosProductos.preciosOrdenadosDesc());
+    }
+
     @Test(description = "TC-20 - Validar elementos principales de la página de productos")
     public void elementosProductosVisibles() {
         new PasosSesion(navegador).sesionEstandar();

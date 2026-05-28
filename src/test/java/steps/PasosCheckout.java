@@ -53,6 +53,13 @@ public class PasosCheckout {
         checkout.finalizar();
     }
 
+    public Carrito cancelarCheckout() {
+        if (checkout == null) {
+            checkout = new Checkout(navegador);
+        }
+        return checkout.cancelar();
+    }
+
     public String obtenerMensajeError() {
         if (checkout == null) {
             checkout = new Checkout(navegador);

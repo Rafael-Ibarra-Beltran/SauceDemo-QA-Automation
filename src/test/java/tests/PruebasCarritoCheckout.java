@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.Carrito;
 import pages.Checkout;
+import pages.Productos;
 import steps.PasosCheckout;
 import steps.PasosProductos;
 import steps.PasosSesion;
@@ -42,6 +43,30 @@ public class PruebasCarritoCheckout extends BaseTest {
 
         Assert.assertTrue(carrito.productoVisible());
         Assert.assertEquals(carrito.obtenerNombreProducto(), Constantes.PRODUCTO_MOCHILA);
+    }
+
+    @Test(description = "TC-23 - Validar que un producto pueda eliminarse desde el carrito")
+    public void eliminarProductoDesdeCarrito() {
+        new PasosSesion(navegador).sesionEstandar();
+        PasosProductos pasosProductos = new PasosProductos(navegador);
+
+        pasosProductos.agregarMochilaAlCarrito();
+        Carrito carrito = pasosProductos.abrirCarrito();
+        carrito.eliminarProducto();
+
+        Assert.assertFalse(carrito.productoVisible());
+    }
+
+    @Test(description = "TC-24 - Validar regreso desde carrito a página de productos")
+    public void regresarDesdeCarritoAProductos() {
+        new PasosSesion(navegador).sesionEstandar();
+        PasosProductos pasosProductos = new PasosProductos(navegador);
+
+        pasosProductos.agregarMochilaAlCarrito();
+        Carrito carrito = pasosProductos.abrirCarrito();
+        Productos productos = carrito.continuarComprando();
+
+        Assert.assertEquals(productos.obtenerTitulo(), Constantes.TEXTO_TITULO_PRODUCTOS);
     }
 
     @Test(description = "TC-14 - Validar inicio del proceso de checkout")
@@ -98,5 +123,17 @@ public class PruebasCarritoCheckout extends BaseTest {
         pasosCheckout.finalizarCompra();
 
         Assert.assertEquals(pasosCheckout.obtenerMensajeCompraCompletada(), Constantes.TEXTO_COMPRA_COMPLETADA);
+    }
+
+    @Test(description = "TC-25 - Validar cancelación del checkout y regreso al carrito")
+    public void cancelarCheckoutRegresaAlCarrito() {
+        new PasosSesion(navegador).sesionEstandar();
+        PasosCheckout pasosCheckout = new PasosCheckout(navegador);
+
+        pasosCheckout.abrirCheckoutConProducto();
+        Carrito carrito = pasosCheckout.cancelarCheckout();
+
+        Assert.assertEquals(carrito.obtenerTitulo(), Constantes.TEXTO_TITULO_CARRITO);
+        Assert.assertTrue(carrito.productoVisible());
     }
 }

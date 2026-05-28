@@ -20,7 +20,9 @@ public final class Constantes {
     public static final String TEXTO_TITULO_RESUMEN = "Checkout: Overview";
     public static final String TEXTO_COMPRA_COMPLETADA = "Thank you for your order!";
     public static final String VALOR_ORDEN_NOMBRE_A_Z = "az";
+    public static final String VALOR_ORDEN_NOMBRE_Z_A = "za";
     public static final String VALOR_ORDEN_PRECIO_MENOR_MAYOR = "lohi";
+    public static final String VALOR_ORDEN_PRECIO_MAYOR_MENOR = "hilo";
     public static final String ERROR_USUARIO_BLOQUEADO = "Epic sadface: Sorry, this user has been locked out.";
     public static final String ERROR_USUARIO_REQUERIDO = "Epic sadface: Username is required";
     public static final String ERROR_CONTRASENA_REQUERIDA = "Epic sadface: Password is required";

@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 public class Carrito extends BasePage {
     private final By tituloCarrito = By.cssSelector("[data-test='title']");
     private final By productoMochila = By.cssSelector("[data-test='inventory-item-name']");
+    private final By botonEliminarProducto = By.id("remove-sauce-labs-backpack");
+    private final By botonContinuarComprando = By.id("continue-shopping");
     private final By botonCheckout = By.id("checkout");
 
     public Carrito(WebDriver navegador) {
@@ -23,6 +25,15 @@ public class Carrito extends BasePage {
 
     public boolean productoVisible() {
         return estaVisible(productoMochila);
+    }
+
+    public void eliminarProducto() {
+        hacerClick(botonEliminarProducto);
+    }
+
+    public Productos continuarComprando() {
+        hacerClick(botonContinuarComprando);
+        return new Productos(navegador);
     }
 
     public void iniciarCheckout() {

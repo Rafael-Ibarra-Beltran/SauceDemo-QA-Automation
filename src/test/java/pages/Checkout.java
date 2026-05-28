@@ -10,6 +10,7 @@ public class Checkout extends BasePage {
     private final By campoApellido = By.id("last-name");
     private final By campoCodigoPostal = By.id("postal-code");
     private final By botonContinuar = By.id("continue");
+    private final By botonCancelar = By.id("cancel");
     private final By botonFinalizar = By.id("finish");
     private final By mensajeError = By.cssSelector("[data-test='error']");
     private final By mensajeCompraCompletada = By.cssSelector("[data-test='complete-header']");
@@ -47,6 +48,11 @@ public class Checkout extends BasePage {
 
     public void finalizar() {
         hacerClickJavaScript(botonFinalizar);
+    }
+
+    public Carrito cancelar() {
+        hacerClickJavaScript(botonCancelar);
+        return new Carrito(navegador);
     }
 
     public String obtenerMensajeError() {

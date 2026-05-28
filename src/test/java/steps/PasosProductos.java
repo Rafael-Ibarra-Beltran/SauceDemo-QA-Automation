@@ -28,8 +28,16 @@ public class PasosProductos {
         productos.ordenarPorValor(Constantes.VALOR_ORDEN_NOMBRE_A_Z);
     }
 
+    public void ordenarPorNombreZA() {
+        productos.ordenarPorValor(Constantes.VALOR_ORDEN_NOMBRE_Z_A);
+    }
+
     public void ordenarPorPrecioAsc() {
         productos.ordenarPorValor(Constantes.VALOR_ORDEN_PRECIO_MENOR_MAYOR);
+    }
+
+    public void ordenarPorPrecioDesc() {
+        productos.ordenarPorValor(Constantes.VALOR_ORDEN_PRECIO_MAYOR_MENOR);
     }
 
     public void agregarMochilaAlCarrito() {
@@ -71,10 +79,24 @@ public class PasosProductos {
         return nombresActuales.equals(nombresEsperados);
     }
 
+    public boolean nombresOrdenadosZA() {
+        List<String> nombresActuales = productos.obtenerNombresProductos();
+        List<String> nombresEsperados = new ArrayList<>(nombresActuales);
+        nombresEsperados.sort(Comparator.reverseOrder());
+        return nombresActuales.equals(nombresEsperados);
+    }
+
     public boolean preciosOrdenadosAsc() {
         List<Double> preciosActuales = productos.obtenerPreciosProductos();
         List<Double> preciosEsperados = new ArrayList<>(preciosActuales);
         preciosEsperados.sort(Comparator.naturalOrder());
+        return preciosActuales.equals(preciosEsperados);
+    }
+
+    public boolean preciosOrdenadosDesc() {
+        List<Double> preciosActuales = productos.obtenerPreciosProductos();
+        List<Double> preciosEsperados = new ArrayList<>(preciosActuales);
+        preciosEsperados.sort(Comparator.reverseOrder());
         return preciosActuales.equals(preciosEsperados);
     }
 }
