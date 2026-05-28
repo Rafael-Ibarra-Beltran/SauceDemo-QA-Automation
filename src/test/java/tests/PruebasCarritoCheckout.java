@@ -30,7 +30,7 @@ public class PruebasCarritoCheckout extends BaseTest {
         pasosProductos.agregarMochilaAlCarrito();
         pasosProductos.eliminarMochilaDelCarrito();
 
-        Assert.assertFalse(pasosProductos.contadorCarritoVisible());
+        Assert.assertTrue(pasosProductos.contadorCarritoOculto());
     }
 
     @Test(description = "TC-13 - Validar visualización de producto dentro del carrito")
@@ -54,7 +54,7 @@ public class PruebasCarritoCheckout extends BaseTest {
         Carrito carrito = pasosProductos.abrirCarrito();
         carrito.eliminarProducto();
 
-        Assert.assertFalse(carrito.productoVisible());
+        Assert.assertTrue(carrito.productoNoVisible());
     }
 
     @Test(description = "TC-24 - Validar regreso desde carrito a página de productos")

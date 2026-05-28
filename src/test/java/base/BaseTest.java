@@ -20,9 +20,14 @@ public class BaseTest {
                 "profile.password_manager_enabled", false,
                 "profile.password_manager_leak_detection", false));
         opciones.addArguments("--disable-features=PasswordLeakDetection");
+        if (Boolean.getBoolean("headless")) {
+            opciones.addArguments("--headless=new", "--window-size=1920,1080");
+        }
         navegador = new ChromeDriver(opciones);
-        navegador.manage().window().maximize();
-        navegador.get(Constantes.URL_SAUCE_DEMO);
+        if (!Boolean.getBoolean("headless")) {
+            navegador.manage().window().maximize();
+        }
+        navegador.get(System.getProperty("baseUrl", Constantes.URL_SAUCE_DEMO));
     }
 
     @AfterMethod(alwaysRun = true)

@@ -27,6 +27,10 @@ public class Carrito extends BasePage {
         return estaVisible(productoMochila);
     }
 
+    public boolean productoNoVisible() {
+        return estaInvisible(productoMochila);
+    }
+
     public void eliminarProducto() {
         hacerClick(botonEliminarProducto);
     }

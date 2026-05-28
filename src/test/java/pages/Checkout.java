@@ -24,9 +24,9 @@ public class Checkout extends BasePage {
     }
 
     public void llenarDatos(String nombre, String apellido, String codigoPostal) {
-        establecerValorJavaScript(campoNombre, nombre);
-        establecerValorJavaScript(campoApellido, apellido);
-        establecerValorJavaScript(campoCodigoPostal, codigoPostal);
+        escribirTexto(campoNombre, nombre);
+        escribirTexto(campoApellido, apellido);
+        escribirTexto(campoCodigoPostal, codigoPostal);
         esperarValoresIngresados(nombre, apellido, codigoPostal);
     }
 
@@ -43,15 +43,15 @@ public class Checkout extends BasePage {
     }
 
     public void continuar() {
-        hacerClickJavaScript(botonContinuar);
+        hacerClick(botonContinuar);
     }
 
     public void finalizar() {
-        hacerClickJavaScript(botonFinalizar);
+        hacerClick(botonFinalizar);
     }
 
     public Carrito cancelar() {
-        hacerClickJavaScript(botonCancelar);
+        hacerClick(botonCancelar);
         return new Carrito(navegador);
     }
 

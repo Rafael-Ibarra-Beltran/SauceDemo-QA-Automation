@@ -66,6 +66,10 @@ public class Productos extends BasePage {
         return estaVisible(contadorCarrito);
     }
 
+    public boolean contadorCarritoOculto() {
+        return estaInvisible(contadorCarrito);
+    }
+
     public boolean carritoVisible() {
         return estaVisible(enlaceCarrito);
     }

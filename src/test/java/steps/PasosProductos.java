@@ -61,6 +61,10 @@ public class PasosProductos {
         return productos.contadorCarritoVisible();
     }
 
+    public boolean contadorCarritoOculto() {
+        return productos.contadorCarritoOculto();
+    }
+
     public void cerrarSesion() {
         productos.abrirMenu();
         productos.cerrarSesion();

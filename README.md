@@ -98,6 +98,18 @@ Ejecutar toda la suite:
 mvn test
 ```
 
+Ejecutar en modo headless:
+
+```bash
+mvn test -Dheadless=true
+```
+
+Ejecutar contra una URL base específica:
+
+```bash
+mvn test -DbaseUrl=https://www.saucedemo.com/
+```
+
 Maven ejecuta las clases que cumplen el patrón configurado en `pom.xml`:
 
 ```text

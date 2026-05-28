@@ -4,6 +4,9 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -67,7 +70,15 @@ public class BasePage {
     protected boolean estaVisible(By localizador) {
         try {
             return esperarElementoVisible(localizador).isDisplayed();
-        } catch (RuntimeException excepcion) {
+        } catch (NoSuchElementException | StaleElementReferenceException | TimeoutException excepcion) {
+            return false;
+        }
+    }
+
+    protected boolean estaInvisible(By localizador) {
+        try {
+            return espera.until(ExpectedConditions.invisibilityOfElementLocated(localizador));
+        } catch (TimeoutException excepcion) {
             return false;
         }
     }
