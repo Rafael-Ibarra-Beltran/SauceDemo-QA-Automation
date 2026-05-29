@@ -44,6 +44,15 @@ public class PasosProductos {
         productos.agregarMochilaAlCarrito();
     }
 
+    public void agregarLuzBicicletaAlCarrito() {
+        productos.agregarLuzBicicletaAlCarrito();
+    }
+
+    public void agregarDosProductosAlCarrito() {
+        agregarMochilaAlCarrito();
+        agregarLuzBicicletaAlCarrito();
+    }
+
     public void eliminarMochilaDelCarrito() {
         productos.eliminarMochilaDelCarrito();
     }

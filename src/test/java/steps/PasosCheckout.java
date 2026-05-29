@@ -46,6 +46,12 @@ public class PasosCheckout {
         continuarConDatos(Constantes.NOMBRE_COMPRADOR, Constantes.APELLIDO_COMPRADOR, Constantes.CODIGO_POSTAL);
     }
 
+    public Checkout abrirResumenCheckoutConProducto() {
+        Checkout checkoutActual = abrirCheckoutConProducto();
+        completarDatosValidos();
+        return checkoutActual;
+    }
+
     public void finalizarCompra() {
         if (checkout == null) {
             checkout = new Checkout(navegador);

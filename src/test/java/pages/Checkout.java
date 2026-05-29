@@ -12,8 +12,11 @@ public class Checkout extends BasePage {
     private final By botonContinuar = By.id("continue");
     private final By botonCancelar = By.id("cancel");
     private final By botonFinalizar = By.id("finish");
+    private final By productoResumen = By.cssSelector("[data-test='inventory-item-name']");
+    private final By totalResumen = By.cssSelector("[data-test='total-label']");
     private final By mensajeError = By.cssSelector("[data-test='error']");
     private final By mensajeCompraCompletada = By.cssSelector("[data-test='complete-header']");
+    private final By botonVolverInicio = By.id("back-to-products");
 
     public Checkout(WebDriver navegador) {
         super(navegador);
@@ -48,6 +51,19 @@ public class Checkout extends BasePage {
 
     public void finalizar() {
         hacerClick(botonFinalizar);
+    }
+
+    public String obtenerProductoResumen() {
+        return obtenerTexto(productoResumen);
+    }
+
+    public boolean totalResumenVisible() {
+        return estaVisible(totalResumen);
+    }
+
+    public Productos volverAProductos() {
+        hacerClick(botonVolverInicio);
+        return new Productos(navegador);
     }
 
     public Carrito cancelar() {

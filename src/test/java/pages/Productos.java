@@ -15,6 +15,7 @@ public class Productos extends BasePage {
     private final By selectorOrdenamiento = By.cssSelector("[data-test='product-sort-container']");
     private final By enlaceMochila = By.id("item_4_title_link");
     private final By botonAgregarMochila = By.id("add-to-cart-sauce-labs-backpack");
+    private final By botonAgregarLuzBicicleta = By.id("add-to-cart-sauce-labs-bike-light");
     private final By botonEliminarMochila = By.id("remove-sauce-labs-backpack");
     private final By enlaceCarrito = By.cssSelector("[data-test='shopping-cart-link']");
     private final By contadorCarrito = By.cssSelector("[data-test='shopping-cart-badge']");
@@ -48,6 +49,10 @@ public class Productos extends BasePage {
 
     public void agregarMochilaAlCarrito() {
         hacerClick(botonAgregarMochila);
+    }
+
+    public void agregarLuzBicicletaAlCarrito() {
+        hacerClick(botonAgregarLuzBicicleta);
     }
 
     public void eliminarMochilaDelCarrito() {

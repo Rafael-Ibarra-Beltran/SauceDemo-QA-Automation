@@ -44,6 +44,7 @@ src/test/java/
     PruebasInicioSesion.java
     PruebasProductos.java
     PruebasCarritoCheckout.java
+    PruebasCasosExtendidos.java
     PruebasMenu.java
   utils/
     Constantes.java

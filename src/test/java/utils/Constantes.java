@@ -11,6 +11,7 @@ public final class Constantes {
     public static final String CONTRASENA_VALIDA = "secret_sauce";
     public static final String CONTRASENA_INCORRECTA = "pass_fake";
     public static final String PRODUCTO_MOCHILA = "Sauce Labs Backpack";
+    public static final String PRODUCTO_LUZ_BICICLETA = "Sauce Labs Bike Light";
     public static final String NOMBRE_COMPRADOR = "Rafael";
     public static final String APELLIDO_COMPRADOR = "Ibarra";
     public static final String CODIGO_POSTAL = "22000";

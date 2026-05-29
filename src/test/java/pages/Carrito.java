@@ -6,7 +6,9 @@ import org.openqa.selenium.WebDriver;
 
 public class Carrito extends BasePage {
     private final By tituloCarrito = By.cssSelector("[data-test='title']");
+    private final By productosCarrito = By.cssSelector("[data-test='inventory-item']");
     private final By productoMochila = By.cssSelector("[data-test='inventory-item-name']");
+    private final By productoLuzBicicleta = By.xpath("//div[@data-test='inventory-item-name' and text()='Sauce Labs Bike Light']");
     private final By botonEliminarProducto = By.id("remove-sauce-labs-backpack");
     private final By botonContinuarComprando = By.id("continue-shopping");
     private final By botonCheckout = By.id("checkout");
@@ -23,8 +25,17 @@ public class Carrito extends BasePage {
         return obtenerTexto(productoMochila);
     }
 
+    public int cantidadProductos() {
+        esperarElementoVisible(productosCarrito);
+        return obtenerCantidadElementos(productosCarrito);
+    }
+
     public boolean productoVisible() {
         return estaVisible(productoMochila);
+    }
+
+    public boolean luzBicicletaVisible() {
+        return estaVisible(productoLuzBicicleta);
     }
 
     public boolean productoNoVisible() {

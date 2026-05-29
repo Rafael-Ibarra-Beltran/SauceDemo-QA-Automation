@@ -8,6 +8,7 @@ public class DetalleProducto extends BasePage {
     private final By nombreProducto = By.cssSelector("[data-test='inventory-item-name']");
     private final By descripcionProducto = By.cssSelector("[data-test='inventory-item-desc']");
     private final By precioProducto = By.cssSelector("[data-test='inventory-item-price']");
+    private final By botonRegresarProductos = By.id("back-to-products");
 
     public DetalleProducto(WebDriver navegador) {
         super(navegador);
@@ -19,5 +20,10 @@ public class DetalleProducto extends BasePage {
 
     public boolean detalleVisible() {
         return estaVisible(nombreProducto) && estaVisible(descripcionProducto) && estaVisible(precioProducto);
+    }
+
+    public Productos regresarAProductos() {
+        hacerClick(botonRegresarProductos);
+        return new Productos(navegador);
     }
 }
